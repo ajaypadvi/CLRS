@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 /**
  * Bubble sort
+ * <p>
+ * Refer https://atekihcan.github.io/CLRS/P02-02/ for the running time although the maintenance part is not quite true
  */
 public class Problem_2_2_BubbleSort {
 
