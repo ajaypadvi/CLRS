@@ -3,6 +3,7 @@ package com.clrs.chapter02;
 public class Problem_2_4 {
     /**
      * Solution which finds inversion pairs in o(n2)
+     * Brute force algorithm
      *
      * @param a
      */
@@ -17,7 +18,7 @@ public class Problem_2_4 {
     }
 
     /**
-     * An improved solution which finds inversion pairs in o(n2)
+     * An improved solution which finds inversion pairs in o(n2) using merge sort technique
      *
      * @param a
      */
