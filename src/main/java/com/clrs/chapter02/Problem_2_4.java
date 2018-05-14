@@ -2,7 +2,6 @@ package com.clrs.chapter02;
 
 import com.clrs.Utils;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Problem_2_4 {
@@ -92,7 +91,6 @@ public class Problem_2_4 {
         inversionPairs(randomArray);
         inversions = invPairsRecursive(randomArray, 0, randomArray.length - 1);
         System.out.println(inversions);
-
 
     }
 }
