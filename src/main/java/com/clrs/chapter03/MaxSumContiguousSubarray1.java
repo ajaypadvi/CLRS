@@ -1,7 +1,5 @@
 package com.clrs.chapter03;
 
-import com.clrs.Utils;
-
 import java.util.Arrays;
 
 /**
@@ -10,7 +8,7 @@ import java.util.Arrays;
  * Average case Theta(n)
  */
 public class MaxSumContiguousSubarray1 {
-    private static void maxSubArray(int[] a) {
+    public int maxSubArray1(int[] a) {
         System.out.println(Arrays.toString(a));
         int current_sum = 0, largest_sum = 0;
         int cs_index = 0;//current start index
@@ -29,9 +27,11 @@ public class MaxSumContiguousSubarray1 {
         System.out.println("largest sum # " + largest_sum);
         System.out.println("start index # " + ls_index);
         System.out.println("end index # " + le_index);
+
+        return largest_sum;
     }
 
-    private static void maxSubArraySum(int a[], int size) {
+    public int maxSubArray2(int a[], int size) {
         int max_so_far = Integer.MIN_VALUE,
                 max_ending_here = 0, start = 0,
                 end = 0, s = 0;
@@ -54,24 +54,17 @@ public class MaxSumContiguousSubarray1 {
                 + max_so_far);
         System.out.println("Starting index " + start);
         System.out.println("Ending index " + end);
+        return max_so_far;
     }
 
-    public static void main(String[] args) {
-        int[] a = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
-        maxSubArray(a);
-
-        System.out.println("--");
-        int[] b = {1, -4, 3, -4};
-        maxSubArray(b);
-
-        System.out.println("--");
-        int[] c = {-7, 1, 21, -7, -8, 22, 1, -2, 10, 10, -3, 26, -1, -7, 4, 3, 3, 6, -2, -5};// Utils.getArrayRandomPositivesAndNegatives(20, 30, 10);
-        maxSubArray(c);
-        System.out.println("--");
-
-        maxSubArraySum(c, c.length);
-
-
+    public int maxSubArray3(int[] a) {
+        System.out.println(Arrays.toString(a));
+        int current_sum = 0, largest_sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            current_sum = Math.max(current_sum, a[i]);
+            largest_sum = Math.max(largest_sum, current_sum);
+        }
+        System.out.println(largest_sum);
+        return largest_sum;
     }
-
 }
