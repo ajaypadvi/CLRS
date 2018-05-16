@@ -9,22 +9,21 @@ import java.util.Arrays;
  * Worst case Big-O(n)
  * Average case Theta(n)
  */
-public class MaxSumContiguousSubarray {
+public class MaxSumContiguousSubarray1 {
     private static void maxSubArray(int[] a) {
         System.out.println(Arrays.toString(a));
         int current_sum = 0, largest_sum = 0;
-        int cs_index = 0, ce_index = 0; //current start and end indices
+        int cs_index = 0;//current start index
         int ls_index = 0, le_index = 0; //largest start and end indices
         for (int i = 0; i < a.length; i++) {
             current_sum = current_sum + a[i];
-            ce_index = i;
             if (current_sum < 0) {
                 current_sum = 0;
                 cs_index = i + 1;
             } else if (current_sum > largest_sum) {
                 largest_sum = current_sum;
                 ls_index = cs_index;
-                le_index = ce_index;
+                le_index = i;
             }
         }
         System.out.println("largest sum # " + largest_sum);
