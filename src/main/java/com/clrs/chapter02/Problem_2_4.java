@@ -86,7 +86,7 @@ public class Problem_2_4 {
 
         System.out.println("--");
 
-        int[] randomArray = Utils.getArrayRandom(20, 10);
+        int[] randomArray = Utils.getArrayRandomPositives(20, 10);
         System.out.println(Arrays.toString(randomArray));
         inversionPairs(randomArray);
         inversions = invPairsRecursive(randomArray, 0, randomArray.length - 1);

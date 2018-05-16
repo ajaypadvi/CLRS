@@ -33,7 +33,7 @@ public class Exercise_2_3_4 {
         System.out.println("After Sorting # " + Arrays.toString(a));
 
 
-        int[] randomArray = Utils.getArrayRandom(15, 100);
+        int[] randomArray = Utils.getArrayRandomPositives(15, 100);
         System.out.println("Original array with random element # " + Arrays.toString(randomArray));
         insertionSortUsingRecursion(randomArray, randomArray.length - 1);
         System.out.println("Sorted array #" + Arrays.toString(randomArray));

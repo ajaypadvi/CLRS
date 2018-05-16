@@ -29,7 +29,7 @@ public class SelectionSort {
         System.out.println("after sorting #" + Arrays.toString(a));
 
 
-        int[] randomArray = Utils.getArrayRandom(20, 100);
+        int[] randomArray = Utils.getArrayRandomPositives(20, 100);
         System.out.println("before sorting # " + Arrays.toString(randomArray));
         selectionSort(randomArray);
         System.out.println("after sorting # " + Arrays.toString(randomArray));
