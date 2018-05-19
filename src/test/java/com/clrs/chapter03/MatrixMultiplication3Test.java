@@ -6,19 +6,20 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class MatrixMultiplication1Test {
-    private MatrixMultiplication1 matrixMultiplication1;
+public class MatrixMultiplication3Test {
+
+    private MatrixMultiplication3 matrixMultiplication3;
 
     @Before
-    public void before() {
-        matrixMultiplication1 = new MatrixMultiplication1();
+    public void setUp() {
+        matrixMultiplication3 = new MatrixMultiplication3();
     }
 
     @Test
-    public void testMultiplySquareMatrices() {
+    public void test_multiply() {
         int[][] a = {{1, 3}, {7, 5}};
         int[][] b = {{6, 8}, {4, 2}};
-        int[][] c = matrixMultiplication1.multiplySquareMatrices(a, b);
+        int[][] c = matrixMultiplication3.multiply(a, b);
         System.out.println("Resultant matrix #");
         Utils.printMatrix(c);
         assertEquals(2, c.length);
