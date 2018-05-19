@@ -1,5 +1,6 @@
 package com.clrs;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Utils {
@@ -24,4 +25,10 @@ public class Utils {
         return array;
     }
 
+
+    public static void printMatrix(int[][] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(Arrays.toString(a[i]));
+        }
+    }
 }
