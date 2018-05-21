@@ -1,6 +1,10 @@
 package com.clrs.chapter03;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
+
 
 /**
  * Using kadan's algorithm
@@ -8,8 +12,10 @@ import java.util.Arrays;
  * Average case Theta(n)
  */
 public class MaxSumContiguousSubarray1 {
+    private static Logger LOG = LoggerFactory.getLogger(MaxSumContiguousSubarray1.class);
+
     public int maxSubArray1(int[] a) {
-        System.out.println(Arrays.toString(a));
+        LOG.debug(Arrays.toString(a));
         int current_sum = 0, largest_sum = 0;
         int cs_index = 0;//current start index
         int ls_index = 0, le_index = 0; //largest start and end indices
@@ -24,9 +30,9 @@ public class MaxSumContiguousSubarray1 {
                 le_index = i;
             }
         }
-        System.out.println("largest sum # " + largest_sum);
-        System.out.println("start index # " + ls_index);
-        System.out.println("end index # " + le_index);
+        LOG.info("largest sum # ", largest_sum);
+        LOG.info("start index # ", ls_index);
+        LOG.info("end index # ", le_index);
 
         return largest_sum;
     }
