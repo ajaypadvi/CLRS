@@ -31,12 +31,20 @@ public class HeapSortTest {
         System.out.println("Maximum heapified array # " + Arrays.toString(a));
     }
 
+    @Test
     public void test_minHeapify1() {
-
+        int[] a = {16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
+        heapSort.minHeapify(a, 0, a.length - 1);
+        assertArrayEquals(new int[]{4, 7, 10, 14, 1, 9, 3, 2, 8, 16}, a);
+        System.out.println("Maximum heapified array # " + Arrays.toString(a));
     }
 
+    @Test
     public void test_minHeapify2() {
-
+        int[] a = {10, 4, 9, 14, 7, 3};
+        heapSort.maxHeapify(a, 0, a.length - 1);
+        assertArrayEquals(new int[]{10, 4, 9, 14, 7, 3}, a);
+        System.out.println("Maximum heapified array # " + Arrays.toString(a));
     }
 
     public void test_heapSort1() {

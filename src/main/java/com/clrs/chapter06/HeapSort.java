@@ -35,8 +35,25 @@ public class HeapSort {
     }
 
 
-    public void minHeapify(int[] a, int i) {
+    public void minHeapify(int[] a, int i, int maxHeapIndex) {
+        System.out.println(Arrays.toString(a));
+        int left = 2 * i + 1;
+        int right = left + 1;
+        int smallest;
+        if (left <= maxHeapIndex && a[left] < a[i]) {
+            smallest = left;
+        } else {
+            smallest = i;
+        }
 
+        if (right <= maxHeapIndex && a[right] < a[smallest]) {
+            smallest = right;
+        }
+
+        if (smallest != i) {
+            exchange(a, smallest, i);
+            minHeapify(a, smallest, maxHeapIndex);
+        }
     }
 
     private static void exchange(int[] a, int j, int i) {
