@@ -1,5 +1,6 @@
 package com.clrs.chapter06;
 
+import com.clrs.Utils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,15 +48,27 @@ public class HeapSortTest {
         System.out.println("Maximum heapified array # " + Arrays.toString(a));
     }
 
+    @Test
     public void test_heapSort1() {
-
+        int[] a = {16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
+        heapSort.heapSort(a);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 7, 8, 9, 10, 14, 16}, a);
+        System.out.println("Sorted array using heapsort # " + Arrays.toString(a));
     }
 
+    @Test
     public void test_heapSort2() {
-
+        int[] a = Utils.getArrayRandomPositives(20, 10);
+        heapSort.heapSort(a);
+        assertTrue(testSort(a));
     }
 
-    public void test_heapSort3() {
-
+    private static boolean testSort(int[] a) {
+        for (int i = a.length - 1; i > 0; i--) {
+            if (a[i] < a[i - 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
