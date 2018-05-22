@@ -55,7 +55,7 @@ public class HeapSort {
             smallest = left;
         } else {
             smallest = i;
-    }
+        }
 
         if (right <= maxHeapIndex && a[right] < a[smallest]) {
             smallest = right;
