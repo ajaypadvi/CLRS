@@ -2,11 +2,14 @@ package com.clrs.chapter06;
 
 import java.util.Arrays;
 
-public class PriorityQueue {
+/**
+ * Implementation of minimum priority queue
+ */
+public class PriorityQueue2 {
     private int[] a;
     private int heapSize;
 
-    public PriorityQueue(int[] a, int heapSize) {
+    public PriorityQueue2(int[] a, int heapSize) {
         this.a = a;
         this.heapSize = heapSize;
     }
@@ -17,7 +20,7 @@ public class PriorityQueue {
      *
      * @return maximum from queue
      */
-    public int max() {
+    public int min() {
         if (a.length == 0) {
             throw new IllegalArgumentException("Heap underflow error");
         }
@@ -29,29 +32,29 @@ public class PriorityQueue {
      *
      * @return maximum from the queue
      */
-    public int extractMax() {
+    public int extractMin() {
         if (heapSize < 0) {
             throw new IllegalArgumentException("Heap underflow error");
         }
         int max = a[0];
         a[0] = a[heapSize - 1];
-        maxHeapify(a, 0, heapSize - 1);
+        minHeapify(a, 0, heapSize - 1);
         heapSize--;
         return max;
     }
 
     /**
-     * It increases the key value of ith index from priority queue
+     * It decreases the key value of ith index from priority queue
      *
      * @param i
      * @param key
      */
-    public void increaseKey(int i, int key) {
-        if (key < a[i]) {
-            throw new IllegalArgumentException("The key is smaller than the current key");
+    public void decreaseKey(int i, int key) {
+        if (key > a[i]) {
+            throw new IllegalArgumentException("The key is greater than the current key");
         }
         a[i] = key;
-        while (i > 0 && a[parent(i)] < a[i]) {
+        while (i > 0 && a[parent(i)] > a[i]) {
             exchange(a, i, parent(i));
             i = parent(i);
         }
@@ -63,9 +66,9 @@ public class PriorityQueue {
      * @param key
      */
     public void insert(int key) {
+        a[heapSize] = Integer.MAX_VALUE;
+        decreaseKey(heapSize, key);
         heapSize++;
-        a[heapSize] = Integer.MIN_VALUE;
-        increaseKey(heapSize, key);
     }
 
 
@@ -73,37 +76,28 @@ public class PriorityQueue {
         return heapSize;
     }
 
-    /**
-     * restore max-heap property (childen are lesser than its parent)for the heap with
-     * parent node at index i
-     * assumes children of A[i] are roots of max-heaps
-     *
-     * @param a
-     * @param i
-     * @param maxHeapIndex
-     */
-    public void maxHeapify(int[] a, int i, int maxHeapIndex) {
+    public static void minHeapify(int[] a, int i, int maxHeapIndex) {
         System.out.println(Arrays.toString(a));
         int left = 2 * i + 1;
         int right = left + 1;
-        int largest;
-        if (left <= maxHeapIndex && a[left] > a[i]) {
-            largest = left;
+        int smallest;
+        if (left <= maxHeapIndex && a[left] < a[i]) {
+            smallest = left;
         } else {
-            largest = i;
+            smallest = i;
         }
 
-        if (right <= maxHeapIndex && a[right] > a[largest]) {
-            largest = right;
+        if (right <= maxHeapIndex && a[right] < a[smallest]) {
+            smallest = right;
         }
 
-        if (largest != i) {
-            exchange(a, largest, i);
-            maxHeapify(a, largest, maxHeapIndex);
+        if (smallest != i) {
+            exchange(a, smallest, i);
+            minHeapify(a, smallest, maxHeapIndex);
         }
     }
 
-    private void exchange(int[] a, int j, int i) {
+    private static void exchange(int[] a, int j, int i) {
         int temp = a[j];
         a[j] = a[i];
         a[i] = temp;
@@ -111,5 +105,11 @@ public class PriorityQueue {
 
     private int parent(int i) {
         return i / 2;
+    }
+
+    public static void buildMinimumHeap(int[] a) {
+        for (int i = (a.length - 1) / 2; i >= 0; i--) {
+            minHeapify(a, i, a.length - 1);
+        }
     }
 }
