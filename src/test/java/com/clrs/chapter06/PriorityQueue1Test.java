@@ -9,7 +9,6 @@ import static org.junit.Assert.assertEquals;
 
 public class PriorityQueue1Test {
 
-
     @Test
     public void testMax() {
         PriorityQueue1 priorityQueue1 = new PriorityQueue1(new int[]{15, 13, 9, 5, 12, 8, 7, 4, 0, 6, 2, 1}, 12);
