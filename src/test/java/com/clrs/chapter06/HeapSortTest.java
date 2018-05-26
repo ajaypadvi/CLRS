@@ -60,15 +60,6 @@ public class HeapSortTest {
     public void test_heapSort2() {
         int[] a = Utils.getArrayRandomPositives(20, 10);
         heapSort.heapSort(a);
-        assertTrue(testSort(a));
-    }
-
-    private static boolean testSort(int[] a) {
-        for (int i = a.length - 1; i > 0; i--) {
-            if (a[i] < a[i - 1]) {
-                return false;
-            }
-        }
-        return true;
+        assertTrue(Utils.testSort(a, true));
     }
 }

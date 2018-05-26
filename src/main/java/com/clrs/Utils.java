@@ -25,6 +25,17 @@ public class Utils {
         return array;
     }
 
+    public static boolean testSort(int[] a, boolean increasing) {
+        for (int i = a.length - 1; i > 0; i--) {
+
+            if ((increasing && a[i] < a[i - 1])) {
+                return false;
+            } else if (!increasing && a[i] > a[i - 1]) {
+
+            }
+        }
+        return true;
+    }
 
     public static void printMatrix(int[][] a) {
         for (int i = 0; i < a.length; i++) {
