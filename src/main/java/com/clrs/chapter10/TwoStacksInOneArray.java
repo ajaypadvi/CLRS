@@ -50,7 +50,7 @@ public class TwoStacksInOneArray {
     }
 
     public int pop(Stack stack) {
-        int x = Integer.MIN_VALUE;
+        int x;
         if (stackEmpty(stack)) {
             throw new StackUnderflowException();
         } else {
