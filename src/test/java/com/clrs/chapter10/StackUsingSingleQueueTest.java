@@ -2,13 +2,14 @@ package com.clrs.chapter10;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
-public class StackUsingTwoQueuesTest {
+public class StackUsingSingleQueueTest {
 
     @Test
     public void test() {
-        StackUsingTwoQueues stack = new StackUsingTwoQueues(10);
+        StackUsingSingleQueue stack = new StackUsingSingleQueue(10);
+
         stack.push(10);
         stack.push(20);
         stack.push(30);
@@ -21,17 +22,10 @@ public class StackUsingTwoQueuesTest {
         stack.push(100);
 
         //Elements should now be popped in LIFO manner so the first to be popped out of Stack is 100 and the last is 10
+
         for (int i = 0; i < 10; i++) {
-            System.out.println(stack.pop());
-            //assertEquals(100 - i * 10, stack.pop());
+            assertEquals(100 - i * 10, stack.pop());
         }
     }
 
-    public void testOverflow() {
-
-    }
-
-    public void testUnderflow() {
-
-    }
 }

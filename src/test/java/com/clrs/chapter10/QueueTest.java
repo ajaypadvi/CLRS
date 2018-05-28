@@ -8,7 +8,7 @@ public class QueueTest {
 
     @Test
     public void testQueue1() {
-        Queue queue = new Queue(6);
+        Queue queue = new Queue(6, "Q");
         queue.enqueue(4);
         queue.enqueue(1);
         queue.enqueue(3);
@@ -21,7 +21,7 @@ public class QueueTest {
 
     @Test(expected = Queue.QueueOverflowException.class)
     public void testOverflow() {
-        Queue queue = new Queue(6);
+        Queue queue = new Queue(6, "Q");
         queue.enqueue(4);
         queue.enqueue(2);
         queue.enqueue(3);
@@ -40,7 +40,7 @@ public class QueueTest {
 
     @Test(expected = Queue.QueueUnderflowException.class)
     public void testUnderflow() {
-        Queue queue = new Queue(6);
+        Queue queue = new Queue(6, "Q");
         queue.enqueue(4);
         queue.enqueue(2);
         queue.enqueue(3);

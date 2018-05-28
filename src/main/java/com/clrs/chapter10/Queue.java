@@ -8,12 +8,16 @@ public class Queue {
     private int head;
     private int tail;
     private int elements;// This extra attribute is to make sure that queue wont overflow or underflow
+    private String name;
+    private int maxSize;
 
-    public Queue(int size) {
+    public Queue(int size, String name) {
         this.head = 0;
         this.tail = 0;
         this.elements = 0;
+        this.maxSize = size;
         this.q = new int[size];
+        this.name = name;
     }
 
     public void enqueue(int x) {
@@ -53,9 +57,21 @@ public class Queue {
         return head;
     }
 
+    public int getElements() {
+        return elements;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
     @Override
     public String toString() {
-        return "#Head=" + head + " #Tail=" + tail + " #Array=" + Arrays.toString(q) + " # Number of elements=" + elements;
+        return "#Name=" + name + " #Head=" + head + " #Tail=" + tail + " #Array=" + Arrays.toString(q) + " # Number of elements=" + elements;
     }
 
     static class QueueOverflowException extends RuntimeException {
