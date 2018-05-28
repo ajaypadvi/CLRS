@@ -9,10 +9,22 @@ public class Stack {
 
     private int[] s;
     private int top;
+    private String name;
+    private int maxSize; //This is useful when Stack is to be used outside this package where access to array is not allowed to get the overall size
 
-    public Stack(int size) {
+    public Stack(int size, String name) {
         this.s = new int[size];
         this.top = -1;
+        this.name = name;
+        this.maxSize = size;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public int getTop() {
+        return top;
     }
 
     private boolean stackFull() {
@@ -61,6 +73,6 @@ public class Stack {
 
     @Override
     public String toString() {
-        return "#Top= " + top + " #Array=" + Arrays.toString(s);
+        return "#Name= " + name + " #Top= " + top + " #Array=" + Arrays.toString(s);
     }
 }
