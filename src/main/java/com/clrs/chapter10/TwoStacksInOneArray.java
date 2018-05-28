@@ -13,8 +13,8 @@ public class TwoStacksInOneArray {
 
     public TwoStacksInOneArray(int size) {
         this.a = new int[size];
-        this.firstStack = new Stack(a, 0, -1);
-        this.secondStack = new Stack(a, size - 1, size);
+        this.firstStack = new Stack(a, 0, -1, " FIRST STACK");
+        this.secondStack = new Stack(a, size - 1, size, "SECOND STACK");
     }
 
     private boolean stackEmpty(Stack stack) {
@@ -46,7 +46,7 @@ public class TwoStacksInOneArray {
             }
             a[stack.top] = x;
         }
-        System.out.println(stack.toString());
+        System.out.println("PUSH : " + stack.toString());
     }
 
     public int pop(Stack stack) {
@@ -62,7 +62,7 @@ public class TwoStacksInOneArray {
                 x = a[stack.top - 1];
             }
         }
-        System.out.println(stack.toString());
+        System.out.println("POP : " + stack.toString());
         return x;
     }
 
@@ -78,16 +78,19 @@ public class TwoStacksInOneArray {
         private int bottom;
         private int top;
         private int[] a;
+        private String name;
 
-        Stack(int[] a, int bottom, int top) {
+        Stack(int[] a, int bottom, int top, String name) {
             this.bottom = bottom;
             this.top = top;
             this.a = a;
+            this.name = name;
         }
+
 
         @Override
         public String toString() {
-            return "#Bottom=" + bottom + " #Top=" + top + " #Array=" + Arrays.toString(a);
+            return "#Name = " + name + " #Bottom=" + bottom + " #Top=" + top + " #Array=" + Arrays.toString(a);
         }
     }
 
