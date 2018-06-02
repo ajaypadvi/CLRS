@@ -1,5 +1,6 @@
-package com.clrs.chapter10;
+package com.clrs.chapter10.stacksqueues;
 
+import com.clrs.chapter10.stacksqueues.Dequeue;
 import org.junit.Test;
 
 public class DequeueTest {

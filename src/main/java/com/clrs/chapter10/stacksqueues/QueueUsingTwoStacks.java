@@ -1,6 +1,4 @@
-package com.clrs.chapter10;
-
-import java.util.Queue;
+package com.clrs.chapter10.stacksqueues;
 
 /**
  * Exercise 10.1-6

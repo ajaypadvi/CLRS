@@ -1,4 +1,4 @@
-package com.clrs.chapter10;
+package com.clrs.chapter10.stacksqueues;
 
 /**
  * Push O(n)

@@ -1,5 +1,6 @@
-package com.clrs.chapter10;
+package com.clrs.chapter10.stacksqueues;
 
+import com.clrs.chapter10.stacksqueues.StackUsingSingleQueue;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
