@@ -1,6 +1,5 @@
-package com.clrs.chapter10.linkedlist.circularlinkedlist;
+package com.clrs.chapter10.DoublyLinkedList.circularlinkedlist;
 
-import com.clrs.chapter10.DoublyLinkedList.circularlinkedlist.LinkedListWithSentinel;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

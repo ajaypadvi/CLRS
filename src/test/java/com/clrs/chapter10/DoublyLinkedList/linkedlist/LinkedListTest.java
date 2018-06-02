@@ -1,4 +1,4 @@
-package com.clrs.chapter10.linkedlist;
+package com.clrs.chapter10.DoublyLinkedList.linkedlist;
 
 import com.clrs.chapter10.DoublyLinkedList.linkedlist.LinkedList;
 import org.junit.Test;
