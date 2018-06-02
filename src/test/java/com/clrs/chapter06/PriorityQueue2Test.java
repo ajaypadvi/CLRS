@@ -2,7 +2,6 @@ package com.clrs.chapter06;
 
 import com.clrs.Utils;
 import org.junit.Test;
-import sun.plugin.javascript.navig.Array;
 
 import java.util.Arrays;
 
