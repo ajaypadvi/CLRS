@@ -1,5 +1,8 @@
 package com.clrs.chapter10.linkedlists.SinglyLinkedList;
 
+/**
+ * Example 10.2-1
+ */
 public class LinkedList {
 
     private Node head;
@@ -74,6 +77,10 @@ public class LinkedList {
         }
         pre.next = pre.next.next;
         elements--;
+    }
+
+    public int getElements() {
+        return elements;
     }
 
     public class Node {
