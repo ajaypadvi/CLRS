@@ -7,8 +7,8 @@ public class StackUsingSinglyLinkedList {
 
     private LinkedList linkedList;
 
-    public StackUsingSinglyLinkedList(LinkedList linkedList) {
-        this.linkedList = linkedList;
+    public StackUsingSinglyLinkedList() {
+        this.linkedList = new LinkedList();
     }
 
     public boolean stackEmpty() {

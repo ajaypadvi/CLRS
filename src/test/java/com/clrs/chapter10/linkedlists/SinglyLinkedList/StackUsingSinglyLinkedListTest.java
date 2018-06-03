@@ -8,7 +8,7 @@ public class StackUsingSinglyLinkedListTest {
 
     @Before
     public void before() {
-        stack = new StackUsingSinglyLinkedList(new LinkedList());
+        stack = new StackUsingSinglyLinkedList();
         stack.push(10);
         stack.push(20);
         stack.push(30);
