@@ -1,4 +1,4 @@
-package com.clrs.chapter10.DoublyLinkedList.linkedlist;
+package com.clrs.chapter10.linkedlists.DoublyLinkedList;
 
 public class LinkedList {
     private Node head;

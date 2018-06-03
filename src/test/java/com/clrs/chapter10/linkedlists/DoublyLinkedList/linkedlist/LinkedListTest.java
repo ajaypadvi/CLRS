@@ -1,6 +1,6 @@
-package com.clrs.chapter10.DoublyLinkedList.linkedlist;
+package com.clrs.chapter10.linkedlists.DoublyLinkedList.linkedlist;
 
-import com.clrs.chapter10.DoublyLinkedList.linkedlist.LinkedList;
+import com.clrs.chapter10.linkedlists.DoublyLinkedList.LinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

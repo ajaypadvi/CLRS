@@ -1,4 +1,4 @@
-package com.clrs.chapter10.DoublyLinkedList.circularlinkedlist;
+package com.clrs.chapter10.linkedlists.DoublyLinkedList.circularlinkedlist;
 
 import org.junit.Test;
 
