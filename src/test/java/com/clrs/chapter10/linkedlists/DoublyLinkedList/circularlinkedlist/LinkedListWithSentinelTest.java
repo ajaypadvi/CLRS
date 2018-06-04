@@ -38,8 +38,26 @@ public class LinkedListWithSentinelTest {
         linkedList.insert(60);
         linkedList.insert(70);
 
-        System.out.println(linkedList.toString());
+        System.out.println(linkedList);
 
         assertEquals(5, linkedList.getSize());
+    }
+
+    @Test
+    public void testUnionOfTwoCircularDoublyLinkedLists() {
+
+        LinkedListWithSentinel list1 = new LinkedListWithSentinel();
+        list1.insert(25);
+        list1.insert(9);
+        list1.insert(16);
+
+        LinkedListWithSentinel list2 = new LinkedListWithSentinel();
+        list2.insert(4);
+        list2.insert(1);
+
+        list1.union(list2);
+        System.out.println(list1);
+        assertEquals(5, list1.getSize());
+
     }
 }

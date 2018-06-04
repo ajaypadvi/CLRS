@@ -52,12 +52,29 @@ public class LinkedListWithSentinel {
         return elements;
     }
 
+    /**
+     * Exercise 10.2-6
+     * The dynamic-set operation Union takes two disjoint set S1 and S2 as input, and it returns a set
+     * S = S1 [ S2 consisting of all the elements of S1 and S2. The sets S1 and S2 are usually destroyed
+     * by the operation. Show how to support Union in O (1) time using a suitable list data structure.
+     *
+     * @param list
+     */
+    public void union(LinkedListWithSentinel list) {
+        this.sentinel.prev.next = list.sentinel.next;
+        list.sentinel.next.prev = this.sentinel;
+        list.sentinel.prev.next = this.sentinel;
+        this.sentinel.prev = list.sentinel.prev;
+
+        this.elements += list.elements;
+    }
+
     @Override
     public String toString() {
         Node startNode = this.sentinel.next;
         StringBuilder text = new StringBuilder();
         while (this.sentinel != startNode) {
-            text.append(startNode.key + "\n");
+            text.append(startNode.key + " ");
             startNode = startNode.next;
         }
         return text.toString();
