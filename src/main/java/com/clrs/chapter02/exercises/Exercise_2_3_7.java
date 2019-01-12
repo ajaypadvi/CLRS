@@ -1,4 +1,6 @@
-package com.clrs.chapter02;
+package com.clrs.chapter02.exercises;
+
+import com.clrs.chapter02.MergeSortWithoutSentinel;
 
 import java.util.Arrays;
 

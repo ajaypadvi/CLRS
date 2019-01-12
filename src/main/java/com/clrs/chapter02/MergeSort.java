@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class MergeSort {
 
-    private static int max = Integer.MAX_VALUE;
+    private static int SENTINEL = Integer.MAX_VALUE;
 
     public static void merge(int[] a, int p, int q, int r) {
         int n1 = q - p + 1;
@@ -15,8 +15,8 @@ public class MergeSort {
         int[] right = new int[n2 + 1];
 
         //assigning sentinels
-        left[left.length - 1] = max;
-        right[right.length - 1] = max;
+        left[left.length - 1] = SENTINEL;
+        right[right.length - 1] = SENTINEL;
 
         int i;
         int j;
@@ -41,34 +41,14 @@ public class MergeSort {
         }
     }
 
-    public static void mergeSort(int[] a, int p, int r) {
+    public static void sort(int[] a, int p, int r) {
         int q;
         if (p < r) {
             q = (p + r) / 2;
-            mergeSort(a, p, q);
-            mergeSort(a, q + 1, r);
+            sort(a, p, q);
+            sort(a, q + 1, r);
             merge(a, p, q, r);
         }
     }
 
-    public static void main(String[] args) {
-        int[] a = {5, 2, 4, 7, 1, 3, 2, 6};
-        mergeSort(a, 0, 7);
-        //merge(a, 0, 3, 7);
-        System.out.println(Arrays.toString(a));
-
-
-        //Now sorting an array filled with random integers
-
-        Random random = new Random();
-
-        int[] array = new int[5];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(10);
-        }
-
-        System.out.println("Original array before sorting takes place " + Arrays.toString(array));
-        mergeSort(array, 0, 4);
-        System.out.println("Sorted array " + Arrays.toString(array));
-    }
 }

@@ -1,4 +1,4 @@
-package com.clrs.chapter02;
+package com.clrs.chapter02.exercises;
 
 import com.clrs.Utils;
 /***
