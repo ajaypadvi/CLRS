@@ -1,0 +1,51 @@
+Sentinel element is the largest(ascending sort) or smallest (descending sort) element used while merging two sorted arrays.
+
+Let's say you are given 2 sorted arrays.
+
+A = [1,3,5,7,9] and B = [2,4,6,8,10]
+Now you want to merge these two. Good strategy is, in each iteration compare the top elements of both the arrays and copy the small element into new array, which will be your merged and sorted array and move the index of only that array to next element. It goes as follows.
+
+Let i = index of A , j = index of B and C is the new array which contains merged and sorted elements
+
+int[] c = new int[a.length + b.length];
+Following are iterations.
+
+Before It1, i = 0 and j = 0
+At It1: min(A[0],B[0]) = 1 and i = 1, j = 0
+At It2: min(A[1],B[0]) = 2 and i = 1, j = 1
+At It3: min(A[1],B[1]) = 3 and i = 2, j = 1
+At It4: min(A[2],B[1]) = 4 and i = 2, j = 2
+At It5: min(A[2],B[2]) = 5 and i = 3, j = 2
+At It6: min(A[3],B[2]) = 6 and i = 3, j = 3
+At It7: min(A[3],B[3]) = 7 and i = 4, j = 3
+At It8: min(A[4],B[3]) = 8 and i = 4, j = 4
+At It9: min(A[4],B[4]) = 9 and i = 5, j = 4
+At this point if you do min(A[5],B[4]), since indices of A are 0 through 4, you are trying to refer and element that does not exist which is A[5] which causes array index out of bounds exception.
+
+Now consider that you have two new arrays A1 and B1 whose size is one more than the size of corresponding arrays A and B and copy all the elements from A to A1 and B to B1. Now in the last position of A1 and B1, fill it with Integer.Max(maximum integer value that can be represented by your language) for ascending sort and Integer.Min(minimum integer value that can be represented by your language) for descending sort. This new element is called Sentinel Element.
+
+If you have sentinel element in both the arrays, then
+
+A[5] = Integer.Max and B[5] = Integer.Max
+
+A[5] = Integer.Max and B[5] = Integer.Max
+At It10: min(A[5],B[4]) = min(Integer.Max, 10) = 10 and i = 5, j = 5
+We stop it here as we do as many iterations as the sum of sizes of the original arrays A and B.
+
+Now let us consider a more suitable example for your question.
+
+Let A = [1,2,3,4,5] B = [6,7,8,9,10]
+The following are the iterations for this
+
+Before It1, i = 0 and j = 0
+At  It1: min(A[0],B[0]) = 1  and i = 1, j = 0
+At  It2: min(A[1],B[0]) = 2  and i = 2, j = 0
+At  It3: min(A[2],B[0]) = 3  and i = 3, j = 0
+At  It4: min(A[3],B[0]) = 4  and i = 4, j = 0
+At  It5: min(A[4],B[0]) = 5  and i = 5, j = 0
+At  It6: min(A[5],B[0]) = min(Integer.Max, 6)  = 6  and i = 5, j = 1
+At  It7: min(A[5],B[1]) = min(Integer.Max, 7)  = 7  and i = 5, j = 2
+At  It8: min(A[5],B[2]) = min(Integer.Max, 8)  = 8  and i = 5, j = 3
+At  It9: min(A[5],B[3]) = min(Integer.Max, 9)  = 9  and i = 5, j = 4
+At It10: min(A[5],B[4]) = min(Integer.Max, 10) = 10 and i = 5, j = 5
+We stop at this point.

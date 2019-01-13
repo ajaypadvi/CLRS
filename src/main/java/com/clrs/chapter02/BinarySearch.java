@@ -1,5 +1,7 @@
 package com.clrs.chapter02;
 
+import com.clrs.chapter02.exercises.MergeSortWithoutSentinel;
+
 import java.util.Arrays;
 
 public class BinarySearch {
@@ -35,34 +37,34 @@ public class BinarySearch {
         }
     }
 
-    public static void main(String[] args) {
-        //Using iterative binary search
-        int[] a = {1, 3, 5, 7, 9, 2, 30, 32};
-        MergeSortWithoutSentinel.mergeSort(a, 0, 7);
-
-        System.out.println("Sorted # " + Arrays.toString(a));
-        int result = BinarySearch.iterativeBinarySearch(a, 30);
-        System.out.println(result);
-
-        result = BinarySearch.iterativeBinarySearch(a, 32);
-        System.out.println(result);
-
-        result = BinarySearch.iterativeBinarySearch(a, 44);
-        System.out.println(result);
-
-        System.out.println("##############");
-        //Using Recursive Binary Search
-        int[] b = {1, 3, 5, 7, 9, 2, 30, 32};
-        MergeSortWithoutSentinel.mergeSort(a, 0, 7);
-
-        System.out.println("Sorted # " + Arrays.toString(a));
-        int r = BinarySearch.recursiveBinarySearch(a, 0, 7, 30);
-        System.out.println(r);
-
-        r = BinarySearch.recursiveBinarySearch(a, 0, 7, 32);
-        System.out.println(r);
-
-        r = BinarySearch.recursiveBinarySearch(a, 0, 7, 44);
-        System.out.println(r);
-    }
+//    public static void main(String[] args) {
+//        //Using iterative binary search
+//        int[] a = {1, 3, 5, 7, 9, 2, 30, 32};
+//        MergeSortWithoutSentinel.mergeSort(a, 0, 7);
+//
+//        System.out.println("Sorted # " + Arrays.toString(a));
+//        int result = BinarySearch.iterativeBinarySearch(a, 30);
+//        System.out.println(result);
+//
+//        result = BinarySearch.iterativeBinarySearch(a, 32);
+//        System.out.println(result);
+//
+//        result = BinarySearch.iterativeBinarySearch(a, 44);
+//        System.out.println(result);
+//
+//        System.out.println("##############");
+//        //Using Recursive Binary Search
+//        int[] b = {1, 3, 5, 7, 9, 2, 30, 32};
+//        MergeSortWithoutSentinel.mergeSort(a, 0, 7);
+//
+//        System.out.println("Sorted # " + Arrays.toString(a));
+//        int r = BinarySearch.recursiveBinarySearch(a, 0, 7, 30);
+//        System.out.println(r);
+//
+//        r = BinarySearch.recursiveBinarySearch(a, 0, 7, 32);
+//        System.out.println(r);
+//
+//        r = BinarySearch.recursiveBinarySearch(a, 0, 7, 44);
+//        System.out.println(r);
+//    }
 }
