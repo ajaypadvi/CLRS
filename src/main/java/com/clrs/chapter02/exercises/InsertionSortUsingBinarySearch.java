@@ -7,10 +7,10 @@ import java.util.Arrays;
  * Read before looking at below URL
  * https://atekihcan.github.io/CLRS/E02.03-06/
  */
-public class Exercise_2_3_6 {
+public class InsertionSortUsingBinarySearch {
 
 
-    public static void insertionSortUsingBinarySearch(int[] a) {
+    public static void sort(int[] a) {
         for (int j = 1; j < a.length; j++) {
             int key = a[j];
             int i = j - 1;
@@ -41,7 +41,7 @@ public class Exercise_2_3_6 {
 
     public static void main(String[] args) {
         int[] a = {2, 4, 8, 11, 6, 3, 9, 27};
-        insertionSortUsingBinarySearch(a);
+        sort(a);
         System.out.println("Sorted array # " + Arrays.toString(a));
     }
 }
